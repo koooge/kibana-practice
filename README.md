@@ -1,7 +1,15 @@
 ### kibana-practice
 
+仮想マシンを立ち上げる
 ```
 $ vagrant up
+```
+
+elasticsearchとkibanaコンテナを立ち上げる
+```
+docker-composeをinstallし、
+docker-compose.yml置いて
+$ docker-compose up -d
 ```
 
 td-agentのinstall
@@ -11,7 +19,7 @@ $ curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
 $ sudo /etc/init.d/td-agent start
 $ sudo /etc/init.d/td-agent status
 
-$ sudo td-agent-gem install fluent-plugin-dstat fluent-plugin-map fluent-plugin-elasticsearch --no-document
+$ sudo td-agent-gem install fluent-plugin-dstat fluent-plugin-elasticsearch --no-document
 ```
 
 dstatの結果をファイルに出力、加えてelasticsearchに送信。
